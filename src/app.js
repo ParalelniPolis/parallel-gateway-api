@@ -7,9 +7,9 @@ import session from 'express-session';
 import errorHandler from 'api-error-handler';
 import chalk from 'chalk';
 import logger from 'morgan';
-import lusca from 'lusca';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import Pusher from 'pusher-js';
 
 /**
@@ -62,9 +62,7 @@ app.use(session({
   saveUninitialized: true,
   secret: process.env.SESSION_SECRET,
 }));
-app.use(lusca.xframe('SAMEORIGIN'));
-app.use(lusca.nosniff());
-app.use(lusca.xssProtection(true));
+app.use(cors);
 
 // create the pusher client connection
 const pusher = new Pusher('e9f5cc20074501ca7395', {

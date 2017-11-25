@@ -55,6 +55,10 @@ export const setOrder = async (req, res, next) => {
       },
     });
 
+    if (!gateway) {
+      return next(new Error('No Gateway found in database'));
+    }
+
     /**
      * Get price in crypto
 		 */
