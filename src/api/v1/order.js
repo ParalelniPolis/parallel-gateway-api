@@ -35,6 +35,10 @@ export const setOrder = async (req, res, next) => {
     gatewayId, cryptocurrency, name, email,
   } = req.body;
 
+  if (!gatewayId) {
+    return next(new Error('No Gateway ID specified'));
+  }
+
   const pusher = req.app.get('pusher');
 
   try {

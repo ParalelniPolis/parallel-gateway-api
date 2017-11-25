@@ -15,6 +15,7 @@ export const getGateway = async (req, res, next) => {
     });
   	if (gateway) {
       return res.json({
+        id: gateway.id,
         name: gateway.name,
         description: gateway.description,
         price: {
