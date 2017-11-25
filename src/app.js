@@ -62,7 +62,7 @@ app.use(session({
   saveUninitialized: true,
   secret: process.env.SESSION_SECRET,
 }));
-app.use(cors);
+app.use(cors());
 
 // create the pusher client connection
 const pusher = new Pusher('e9f5cc20074501ca7395', {
