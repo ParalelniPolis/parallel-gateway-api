@@ -1,0 +1,46 @@
+{
+  "name": "payment-api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "@pajasevi",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "eslint *.js src/** ",
+    "jsdoc": "jsdoc src -r -d docs",
+    "build": "babel src/ --out-dir dist/ --ignore spec.js ",
+    "dev": "NODE_ENV=development concurrently \"npm run build -- --watch\" \"nodemon dist/app.js\"",
+    "start": "NODE_ENV=production npm run build && node dist/app"
+  },
+  "dependencies": {
+    "api-error-handler": "^1.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-minify": "^0.2.0",
+    "bitcore-lib": "^0.15.0",
+    "body-parser": "^1.18.2",
+    "chalk": "^2.3.0",
+    "compression": "^1.7.1",
+    "concurrently": "^3.5.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "litecore-lib": "^0.13.22",
+    "lusca": "^1.5.2",
+    "morgan": "^1.9.0",
+    "mysql2": "^1.4.2",
+    "node-fetch": "^1.7.3",
+    "pusher-js": "^4.2.1",
+    "sequelize": "^4.22.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.2",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsdoc": "^3.2.0",
+    "jsdoc": "^3.5.5",
+    "nodemon": "^1.12.1"
+  }
+}

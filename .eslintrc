@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": false,
+    "node": true,
+    "es6": true
+  },
+  "plugins": [
+    "import",
+    "jsdoc"
+  ],
+  "extends": "airbnb-base",
+  "rules": {
+    "no-console": 0,
+    "max-len": 0,
+    "no-tabs": 0,
+    "no-mixed-spaces-and-tabs": 0,
+    "consistent-return": 0,
+    "import/no-extraneous-dependencies": 0
+  }
+}
